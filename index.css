@@ -4,7 +4,8 @@
 }
 
 header{
-    background-color: rgba(35,28,26,0.8);
+    /*background-color: rgba(35,28,26,0.8);*/
+    background-color:#2b2b2b;
     height: 80px;
     width: 100%;
     position: fixed;
@@ -48,7 +49,7 @@ header a:hover{
     background-color: antiquewhite;
     color: white;
     height: 95vh;
-    background-image: url(image/16047930919_350d5ae2c6_b.jpg);
+    background-image: url(image/S__14950404.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -57,6 +58,12 @@ header a:hover{
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+.sideProject img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .selfintro h2{
