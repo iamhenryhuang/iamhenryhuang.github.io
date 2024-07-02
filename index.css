@@ -6,34 +6,29 @@
 header{
     /*background-color: rgba(35,28,26,0.8);*/
     background-color:#2b2b2b;
-    height: 80px;
+    height: 70px;
     width: 100%;
     position: fixed;
+
+    display: flex;
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+
+    font-family: Times New Roman;
 }
 
 header ul{
-    position: absolute;
-    right: 5vw;
-    top: 0;
-    line-height: 80px;
-}
-
-h1{
-    position: absolute;
-    left: 120px;
-    top: 0;
-    line-height: 80px;
-    /*background-image: url(image//4abf56246d3dbbdbea467defe16fcfc4.jpg);*/
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 250px;
-    text-indent: -9999px;
-    color:white;
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 header li{
-    display:inline;
-    margin-right: 4vw;
+    /*display:inline;
+    margin-right: 4vw;*/
+    margin: 0 50px;
+    font-size: 18px;
 }
 
 header a{
@@ -45,10 +40,10 @@ header a:hover{
     text-decoration: underline;
 }
 
-.selfintro{
+.home{
     background-color: antiquewhite;
     color: white;
-    height: 95vh;
+    min-height: calc(110vh - 70px);
     background-image: url(image/S__14950404.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,28 +53,28 @@ header a:hover{
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-family: fantasy;
 }
 
-.sideProject img {
+.home img {
     width: 100%;
     height: auto;
     border-radius: 10px;
 }
 
-.selfintro h2{
+.home h2{
     font-size: 60px;
     margin-top: 60px;
-    
 }
 
-.selfintro p{
+.home p{
     color: #fef7e6;
     font-size: 18px;
     margin: 25px 0;
     white-space: pre-line;
 }
 
-.selfintro a{
+.home a{
     color: gray;
     text-decoration: none;
     border: 1px solid #ACACAC;
@@ -93,7 +88,7 @@ header a:hover{
     justify-content: space-between;
     align-items: center;
     padding: 100px 180px 80px;
-    
+    min-height: calc(100vh - 60px);
     
     /* origin slogan
     background-color: #485652;
@@ -138,60 +133,122 @@ footer{
     font-size: 14px;
 }
 
-.others{
+.selfintro{
     display: flex;
+    min-height: calc(105vh - 70px);
+    align-items: center; /* 垂直居中 */
+    padding: 20px;
 }
 
-.others img{
-    width: 50%;
+#main_education_div {
+    margin-left: 0%;
+    margin-top: 20%;
+    width: 90%;
+    height: 15%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
 }
 
-.info{
-    width: 50%;
+.about_section_div{
+    background-color: rgb(255, 255, 255);
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    border-width: 5px;
+    border-radius: 10px;
+    margin-top: 7%;
+    border-radius: 0.8rem;
+    box-shadow: 10px 10px 10px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+.selfintro img{
+    border-radius: 50%;
+    width: 300px; /* 设置固定宽度 */
+    height: 300px; /* 设置固定高度 */
+    object-fit: cover; /* 保持图片的长宽比，填满容器 */
+}
+
+#info{
+    /*width: 50%;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-.info h2{
-    font-size: 40px;
-    margin-bottom: 30px;
-}
-
-.info p{
-    text-align: center;
-    line-height: 2em;
-}
-
-.language{
+    justify-content: center;*/
+    margin-right: 5%;
+    width: 55%;
+    /* background-color: blue; */
     display: flex;
-    background-color: #ede9db;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.about_into_title{
+    font-size: 30px;
+    color: rgb(18, 62, 123);
+    
+}
+
+.main_education_div{
+    width: 98%;
+    height: 35%;
+    margin-left: 2%;
+    margin-top: 0%;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    /* background-color: green;*/
+}
+
+.main_school_div{
+    height: 40%;
+    display: flex;
     justify-content: space-between;
+}
+
+.school {
+    font-size: 20px;
+    display: inline-flex;
     align-items: center;
-    padding: 100px 180px 80px;
 }
 
-.language div{
-    width: 300px;
-    text-align: center;
+.about_section_word {
+    color: black;
 }
 
-.language image{
-    width: 100%;
-    height: auto;
-    border-radius: 10px;;
+
+.school h2{
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
 }
 
-.language h3{
-    font-size: 25px;
-    margin: 20px 0;
-}
-
-.language p{
+.education_period {
     font-size: 16px;
-    line-height: 1.6em;
+    display: inline-flex;
+    align-items: center;
 }
 
 .newsletter{
