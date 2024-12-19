@@ -1,0 +1,218 @@
+body {
+    background: linear-gradient(to bottom, #e0f7fa, #ffffff);
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(240, 240, 240, 0.9);
+    padding: 25px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.navbar-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#theme-toggle {
+    position: absolute;
+    right: 30px;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.navbar a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover, #theme-toggle:hover {
+    color: #fff;
+    background-color: #007BFF;
+    border-radius: 5px;
+}
+
+.content-card {
+    max-width: 800px;
+    background: #fff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 0 auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 30px; /* 增大按鈕的內邊距 */
+    color: #333; /* 修改按鈕文字顏色 */
+    background-color: #f0f0f0; /* 使用淺灰色背景 */
+    border: 2px solid #007BFF; /* 增加邊框 */
+    border-radius: 10px; /* 調整圓角 */
+    font-weight: bold; /* 字體加粗 */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 增加陰影 */
+}
+
+.card-button:hover {
+    color: #fff; /* 懸停時文字顏色改為白色 */
+    background-color: #007BFF; /* 懸停時背景改為藍色 */
+    border-color: #0056b3; /* 懸停時邊框顏色變深 */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* 增強陰影效果 */
+}
+
+.section {
+    padding: 120px 20px 70px;
+}
+
+.portfolio-gallery {
+    display: flex;
+    gap: 20px; /* 圖片之間的間距 */
+    justify-content: center;
+    flex-wrap: wrap; /* 保證多圖片時換行 */
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    max-width: 100%; /* 限制每個項目寬度不超過父容器 */
+    text-align: center; /* 說明文字居中 */
+}
+
+.portfolio-image {
+    width: 100%; /* 圖片寬度填滿父容器 */
+    height: auto; /* 保持圖片比例 */
+    max-width: 750px; /* 限制圖片最大寬度以避免超出卡片 */
+    border-radius: 10px; /* 圓角效果 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* 陰影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-image:hover {
+    transform: scale(1.05); /* 懸停放大效果 */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* 增強懸停陰影效果 */
+}
+
+.tech-details {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    text-align: left;
+    transition: max-height 0.3s ease-out;
+    overflow: hidden;
+}
+
+.tech-toggle {
+    margin: 10px 0;
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.tech-toggle:hover {
+    background-color: #0056b3;
+}
+
+.portfolio-item ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.portfolio-item ul li {
+    margin: 8px 0;
+    position: relative;
+}
+
+.portfolio-item ul li:before {
+    content: "•";
+    color: #007BFF;
+    font-weight: bold;
+    position: absolute;
+    left: -15px;
+}
+
+.content-card {
+    overflow: hidden; /* 防止內容溢出 */
+    text-align: center;
+}
+
+
+.button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007BFF;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.dark-theme {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.dark-theme .navbar {
+    background-color: #1e1e1e;
+}
+
+.dark-theme .content-card {
+    background-color: #1e1e1e;
+    color: #ffffff;
+}
+
+.dark-theme a {
+    color: #80d4ff;
+}
+
+.dark-theme a:hover {
+    color: #ffffff;
+    background-color: #80d4ff;
+}
