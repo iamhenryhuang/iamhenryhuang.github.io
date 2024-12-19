@@ -1,78 +1,99 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Henry's Website</title>
-        <link rel="stylesheet" href="index.css">
-        
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
     </head>
-  
-    <body>
-        <header>
-            <button class="menu">&#9776;</button>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#selfintro">About Me</a></li>
-                    <li><a href="#sideProject">Side Projects</a></li>
-                    <li><a href="https://www.linkedin.com/in/iamhenryhuang000/">LinkedIn</a></li>
-                    <li><a href="https://github.com/iamhenryhuang">Github</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <section id="home" class="home">
-                <h2>Hello World</h2>
-            </section>
 
-            <section id="selfintro" class="selfintro">
-                <img src="image/IMG_3393.JPG" alt="me">
-                <div class="info">
-                    <div id="main_education_div" class="about_section_div">
-                        <h1 id="education" class="about_into_title about_section_word">Education</h1>
-                        <div class="main_education_div">
-                            <div class="main_school_div">
-                                <h2 class="school about_section_word">B.S. in CS @NCCU</h2>
-                                <h2 class="education_period about_section_word">Sep. 2023 ~</h2>
-                            </div>
+    <body>
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="#about">About Me</a>
+                    <a href="#portfolio">Side Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button id="theme-toggle">Change to dark theme</button>
+            </div>
+        </div>
+
+        <section id="about" class="section">
+            <div class="content-card">
+                <h1>About Me</h1>
+                <h4>Hi there, this is Henry.</h4>
+                <p>I am a Computer Science student at National Chengchi University, 
+                    with a strong passion for Coding, FinTech and AI technologies.</p>
+                <p>As a rising developer, I focus on applying machine learning techniques to financial market analysis. 
+                    Beyond coding, I am also an enthusiastic competitive swimmer who has participated in various swimming competitions.</p>
+                <a href="https://www.nccu.edu.tw/p/406-1000-16789,r17.php?Lang=zh-tw">Competition Result</a>
+            </div>
+        </section>
+
+        <section id="portfolio" class="section">
+            <div class="content-card">
+                <h1>Side Projects</h1>
+                <div class="portfolio-gallery">
+                    <div class="portfolio-item">
+                        <h3>1. Stock Price Prediction - TSMC Regression Analysis</h3>
+                        <img src="./images/regression.png" alt="Regression" class="portfolio-image">
+                        <p>
+                            A deep learning project focused on predicting TSMC stock prices using historical trading data analysis.
+                        </p>
+                        <div class="tech-details" style="display: none;">
+                            <h4>Model Architecture</h4>
+                            <ul>
+                                <li>Input Features: Opening price, High/Low prices, Volume</li>
+                                <li>Neural Network Layers:</li>
+                                <ul>
+                                    <li>Dense Layer (459 units)</li>
+                                    <li>Dense Layer (9 units)</li>
+                                    <li>Output Layer</li>
+                                </ul>
+                            </ul>
                         </div>
+                        <button class="tech-toggle">Show Technical Details</button>
+                        <a href="https://colab.research.google.com/drive/1mjbyh0Q2ILV-cq62wJKVW_B4_3jF9P5y?hl=zh-tw#scrollTo=tAk46J42CSvQ">Source Code</a>
+                    </div>
+                    <div class="portfolio-item">
+                        <h3>2. Stock Price Prediction - LSTM Time Series Analysis</h3>
+                        <img src="./images/lstm.png" alt="LSTM" class="portfolio-image">
+                        <p>This project implements an LSTM (Long Short-Term Memory) neural network for stock price prediction.</p>
+                        <div class="tech-details" style="display: none;">
+                            <h4>LSTM Architecture</h4>
+                            <ul>
+                                <li>Input Features: 5 historical price indicators</li>
+                                <li>Model Layers:</li>
+                                <ul>
+                                    <li>LSTM Layer (50 units) with Dropout</li>
+                                    <li>LSTM Layer (50 units) with Dropout</li>
+                                    <li>LSTM Layer (50 units) with Dropout</li>
+                                    <li>Dense Output Layer</li>
+                                </ul>
+                            </ul>
+                        </div>
+                        <button class="tech-toggle">Show Technical Details</button>
+                        <a href="https://colab.research.google.com/drive/1I_uFWI2wKwi19rGmyrjSwwE1pIjYdWer#scrollTo=vnm3X9da9XD6">Source Code</a>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="sideProject" class="sideProject">
-                <div>
-                    <img src="image/螢幕擷取畫面 2024-03-01 234924.png" alt="clock">
-                    <h3>Clock</h3>
-                    <p>Standard analog clock</p>
-                </div>
-                <div>
-                    <img src="image/螢幕擷取畫面 2024-03-01 235044.png" alt="game">
-                    <h3>Game</h3>
-                    <p>Paper & Scissors & Stone</p>
-                </div>
-                <div>
-                    <img src="image/螢幕擷取畫面 2024-03-01 235140.png" alt="stopwatch">
-                    <h3>Stopwatch</h3>
-                    <p>Three functions stopwatch</p>
-                </div>
-            </section>
+        <section id="contact" class="section">
+            <div class="content-card">
+                <h1>Contact Me</h1>
+                <a href="https://www.facebook.com/profile.php?id=100016927805886" target="_blank" class="button card-button">Facebook</a>
+                <a href="https://github.com/iamhenryhuang" target="_blank" class="button card-button">GitHub</a>
+                <a href="www.linkedin.com/in/iamhenryhuang000" target="_blank" class="button card-button">LinkedIn</a>
+            </div>
+        </section>
 
-            <section class="newsletter">
-                <p>Welcome to subscribe my newsletter!</p>
-                <form id="newsletterForm">
-                    <input type="email" id="emailInput" placeholder="Please enter your Email" required>
-                    <button type="submit" id="submitButton">Submit</button>
-                </form>
-            </section>
-            
-        </main>
-        <footer>
-            <p>Copyright © 2024 Henry's Website All Rights Reserved.</p>
-        </footer>
-        
-    
+        <form>
+            <input type="email" id="email" placeholder="Enter your email">
+            <div id="email-feedback" style="font-size: 0.9rem;"></div>
+            <button class="button" type="submit">Submit</button>
+        </form>
     </body>
-
 </html>
