@@ -5,9 +5,12 @@
         <title>Henry's Website</title>
         <link rel="stylesheet" href="style.css">
         <script src="script.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     </head>
 
     <body>
+               
+        <div id="particles-js"></div>       
         <div class="navbar">
             <div class="navbar-container">
                 <div class="nav-links">
@@ -126,6 +129,13 @@
                     <button class="carousel-button next">&#10095;</button>
                     <div class="carousel-dots"></div>
                 </div>
+            </div>
+        </section>
+
+        <section id="weather" class="section">
+            <div class="content-card">
+                <h1>Wenshan District Weather</h1>
+                <p id="weather-data">Loading weather data...</p>
             </div>
         </section>
 
