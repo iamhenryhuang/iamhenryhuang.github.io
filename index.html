@@ -35,50 +35,96 @@
         <section id="portfolio" class="section">
             <div class="content-card">
                 <h1>Side Projects</h1>
-                <div class="portfolio-gallery">
-                    <div class="portfolio-item">
-                        <h3>1. Stock Price Prediction - TSMC Regression Analysis</h3>
-                        <img src="./images/regression.png" alt="Regression" class="portfolio-image">
-                        <p>
-                            A deep learning project focused on predicting TSMC stock prices using historical trading data analysis.
-                        </p>
-                        <div class="tech-details" style="display: none;">
-                            <h4>Model Architecture</h4>
-                            <ul>
-                                <li>Input Features: Opening price, High/Low prices, Volume</li>
-                                <li>Neural Network Layers:</li>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <h3>1. Stock Price Prediction - TSMC Regression Analysis</h3>
+                            <div class="img-container">
+                                <img src="./images/regression.png" alt="Regression" class="portfolio-image">
+                            </div>
+                            <p>A deep learning project focused on predicting TSMC stock prices using historical trading data analysis.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>Model Architecture</h4>
                                 <ul>
-                                    <li>Dense Layer (459 units)</li>
-                                    <li>Dense Layer (9 units)</li>
-                                    <li>Output Layer</li>
+                                    <li>Input Features: Opening price, High/Low prices, Volume</li>
+                                    <li>Neural Network Layers:</li>
+                                    <ul>
+                                        <li>Dense Layer (459 units)</li>
+                                        <li>Dense Layer (9 units)</li>
+                                        <li>Output Layer</li>
+                                    </ul>
                                 </ul>
-                            </ul>
+                            </div>
+                            <button class="tech-toggle">Show Technical Details</button>
+                            <br>
+                            <a href="https://colab.research.google.com/drive/1mjbyh0Q2ILV-cq62wJKVW_B4_3jF9P5y?hl=zh-tw#scrollTo=tAk46J42CSvQ">Source Code</a>
                         </div>
-                        <button class="tech-toggle">Show Technical Details</button>
-                        <br>
-                        <a href="https://colab.research.google.com/drive/1mjbyh0Q2ILV-cq62wJKVW_B4_3jF9P5y?hl=zh-tw#scrollTo=tAk46J42CSvQ">Source Code</a>
-                    </div>
-                    <div class="portfolio-item">
-                        <h3>2. Stock Price Prediction - LSTM Time Series Analysis</h3>
-                        <img src="./images/lstm.png" alt="LSTM" class="portfolio-image">
-                        <p>This project implements an LSTM (Long Short-Term Memory) neural network for stock price prediction.</p>
-                        <div class="tech-details" style="display: none;">
-                            <h4>LSTM Architecture</h4>
-                            <ul>
-                                <li>Input Features: 5 historical price indicators</li>
-                                <li>Model Layers:</li>
+                        <div class="carousel-slide">
+                            <h3>2. Stock Price Prediction - LSTM Time Series Analysis</h3>
+                            <div class="img-container">
+                                <img src="./images/lstm.png" alt="LSTM" class="portfolio-image">
+                            </div>
+                            <p>This project implements an LSTM (Long Short-Term Memory) neural network for stock price prediction.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>LSTM Architecture</h4>
                                 <ul>
-                                    <li>LSTM Layer (50 units) with Dropout</li>
-                                    <li>LSTM Layer (50 units) with Dropout</li>
-                                    <li>LSTM Layer (50 units) with Dropout</li>
-                                    <li>Dense Output Layer</li>
+                                    <li>Input Features: 5 historical price indicators</li>
+                                    <li>Model Layers:</li>
+                                    <ul>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>Dense Output Layer</li>
+                                    </ul>
                                 </ul>
-                            </ul>
+                            </div>
+                            <button class="tech-toggle">Show Technical Details</button>
+                            <br>
+                            <a href="https://colab.research.google.com/drive/1I_uFWI2wKwi19rGmyrjSwwE1pIjYdWer#scrollTo=vnm3X9da9XD6">Source Code</a>
                         </div>
-                        <button class="tech-toggle">Show Technical Details</button>
-                        <br>
-                        <a href="https://colab.research.google.com/drive/1I_uFWI2wKwi19rGmyrjSwwE1pIjYdWer#scrollTo=vnm3X9da9XD6">Source Code</a>
+                        <div class="carousel-slide">
+                            <h3>3. Smart Trash Classification System: A Deep Learning Approach</h3>
+                            <div class="img-container">
+                                <img src="./images/trash_frontend.png" class="portfolio-image">
+                                <img src="./images/trash.png" class="portfolio-image">
+                            </div>
+                            <p>Developing an image classification model using TensorFlow and Keras, 
+                                leveraging transfer learning with the pre-trained InceptionV3 model to accurately classify waste.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>Technical Details</h4>
+                                <ul>
+                                    <li>Framework: TensorFlow and Keras</li>
+                                    <li>Model: InceptionV3 (pre-trained, fine-tuned last 15 layers)</li>
+                                    <li>Data Processing:</li>
+                                    <ul>
+                                        <li>Dataset split into training and validation sets</li>
+                                        <li>Data augmentation: Shear, Zoom, Horizontal Flip</li>
+                                        <li>Resized input images to 128x128 pixels</li>
+                                    </ul>
+                                    <li>Model Architecture:</li>
+                                    <ul>
+                                        <li>Pre-trained InceptionV3 as feature extractor</li>
+                                        <li>Global Average Pooling layer</li>
+                                        <li>Fully connected Dense layer with 8 output units (softmax activation)</li>
+                                    </ul>
+                                    <li>Optimization:</li>
+                                    <ul>
+                                        <li>Loss Function: Categorical Crossentropy</li>
+                                        <li>Optimizer: RMSprop with a learning rate of 1e-5</li>
+                                    </ul>
+                                    <li>Visualized predictions on test images</li>
+                                    <li>Performance Tracking: Integrated with TensorBoard</li>
+                                </ul>
+                            </div>                                
+                            <button class="tech-toggle">Show Technical Details</button>
+                            <br>
+                            <a href="https://colab.research.google.com/drive/11TvamhvAiUprdFwdrdyc8FHhsC-01p_n">Source Code</a>
+                        </div>
                     </div>
+                    
+                    <button class="carousel-button prev">&#10094;</button>
+                    <button class="carousel-button next">&#10095;</button>
+                    <div class="carousel-dots"></div>
                 </div>
             </div>
         </section>
