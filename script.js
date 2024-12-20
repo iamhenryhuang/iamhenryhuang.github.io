@@ -1,4 +1,4 @@
-// dark-light
+// dark-light mode
 function toggleTheme() {
     document.body.classList.toggle('dark-theme');
     const themeButton = document.getElementById('theme-toggle');
@@ -24,7 +24,7 @@ document.querySelectorAll('.nav-links a').forEach(anchor => {
     });
 });
 
-// email
+// email section
 document.getElementById('email').addEventListener('input', (e) => {
     const email = e.target.value;
     const feedback = document.getElementById('email-feedback');
@@ -38,7 +38,7 @@ document.getElementById('email').addEventListener('input', (e) => {
     }
 });
 
-// 回到頂部
+// back-to-top section
 const backToTopButton = document.createElement('button');
 backToTopButton.innerText = '⬆ Back to top';
 backToTopButton.style.position = 'fixed';
