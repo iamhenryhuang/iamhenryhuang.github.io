@@ -186,3 +186,30 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初始化輪播功能
     initializeCarousel();
 });
+
+// particles action
+particlesJS.load('particles-js', './particles.json', function() {
+    console.log('Particles.js loaded');
+});
+
+/*weather part*/
+// 獲取天氣數據的函數
+async function fetchWeather() {
+    const url = 'https://api.open-meteo.com/v1/forecast?latitude=24.9928&longitude=121.5431&current_weather=true';
+    const weatherDataElement = document.getElementById('weather-data');
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        const temp = data.current_weather.temperature;
+        const wind = data.current_weather.windspeed;
+
+        weatherDataElement.innerText = `🌡️ 溫度: ${temp}°C, 🌬️ 風速: ${wind} km/h`;
+    } catch (error) {
+        weatherDataElement.innerText = '無法獲取天氣數據，請稍後再試。';
+        console.error(error);
+    }
+}
+
+// 加載時獲取數據
+document.addEventListener('DOMContentLoaded', fetchWeather);
