@@ -328,3 +328,27 @@ body {
     color: #fff; /* 深色主題文字顏色為白色 */
     background-color: transparent; /* 保持透明背景 */
 }
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* 確保粒子背景在其他內容後面 */
+    background-color: #000; /* 默認背景色 */
+}
+
+/*weather section*/
+#weather-data {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-top: 20px;
+    font-weight: bold;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#weather-data.updating {
+    transform: scale(1.2); /* 放大效果 */
+    opacity: 0.8; /* 半透明效果 */
+}
