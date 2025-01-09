@@ -187,11 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeCarousel();
 });
 
-// particles action
-particlesJS.load('particles-js', './particles.json', function() {
-    console.log('Particles.js loaded');
-});
-
 /*weather part*/
 // 獲取天氣數據的函數
 async function fetchWeather() {
