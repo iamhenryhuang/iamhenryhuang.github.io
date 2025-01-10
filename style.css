@@ -99,18 +99,26 @@ body {
 }
 
 .content-card {
-  max-width: 1000px;
+  max-width: 975px;
   margin: 0 auto;
   background: white;
   border-radius: 1rem;
   box-shadow: var(--card-shadow);
-  padding: 3rem;
-  transition: var(--transition-smooth);
+  padding: 2rem; /* 減小預設填充 */
+  transition: all 0.3s ease; /* 平滑過渡效果 */
+  overflow: hidden; /* 隱藏溢出的內容 */
 }
 
-.content-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+/* 技術細節隱藏時的樣式 */
+.content-card.collapsed {
+  max-height: 150px; /* 限制卡片高度 */
+  padding: 1.5rem; /* 減小上下填充 */
+}
+
+/* 技術細節顯示時的樣式 */
+.content-card.expanded {
+  max-height: 1000px; /* 足夠高度以顯示所有內容 */
+  padding: 2rem; /* 恢復正常填充 */
 }
 
 /* About section styles */
@@ -124,8 +132,9 @@ body {
 .about-item {
   text-align: left;
   padding: 1.5rem;
-  background: var(--background-light);
+  background: var(--background-light); /* 預設背景 */
   border-radius: 0.75rem;
+  box-shadow: var(--card-shadow); /* 預設陰影 */
   transition: var(--transition-smooth);
 }
 
@@ -153,7 +162,7 @@ body {
   object-fit: cover;
   margin: 2rem auto;
   display: block;
-  border: 4px solid var(--primary-color);
+
   transition: var(--transition-smooth);
 }
 
@@ -177,6 +186,34 @@ body {
 .carousel-slide {
   min-width: 100%;
   padding: 1rem;
+}
+
+.carousel-slide h4 {
+  font-size: 1.2rem; /* 增大標題字體 */
+  font-weight: 600; /* 加粗字體 */
+  color: var(--primary-color); /* 使用主題顏色 */
+  margin-bottom: 0.5rem; /* 增加與段落的間距 */
+  text-align: left; /* 左對齊 */
+  position: relative; /* 添加圖案時需要 */
+}
+
+/* 通用段落樣式 */
+.carousel-slide p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark); /* 預設文字顏色 */
+  background: rgba(255, 255, 255, 0.8); /* 白色半透明背景 */
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode 下的段落樣式 */
+.dark-theme .carousel-slide p {
+  color: #f8fafc; /* 白色文字 */
+  background: rgba(30, 41, 59, 0.9); /* 深色半透明背景 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 加強陰影效果 */
 }
 
 .portfolio-image {
@@ -278,7 +315,7 @@ body {
   background: var(--secondary-color);
 }
 
-/* Contact section styles */
+/* 通用按鈕樣式 */
 .card-button {
   display: inline-flex;
   align-items: center;
@@ -293,37 +330,49 @@ body {
   font-weight: 500;
   transition: var(--transition-smooth);
   box-shadow: 
-    0 2px 4px rgba(37, 99, 235, 0.1),
-    0 4px 8px rgba(37, 99, 235, 0.1),
-    inset 0 1px 1px rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(4px);
-  letter-spacing: 0.5px;
+      0 2px 4px rgba(37, 99, 235, 0.1),
+      0 4px 8px rgba(37, 99, 235, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1);
 }
 
+/* Dark Mode 下的按鈕樣式 */
+.dark-theme .card-button {
+  background: linear-gradient(145deg, #1e40af, #1e293b); /* 深色背景 */
+  color: #e0f2fe; /* 柔和的淺藍文字 */
+  border: 1px solid #475569; /* 深灰色邊框 */
+  box-shadow: 
+      0 3px 8px rgba(15, 23, 42, 0.2),
+      0 1px 3px rgba(15, 23, 42, 0.1),
+      inset 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* 懸停效果 */
 .card-button:hover {
   transform: translateY(-2px);
-  box-shadow: 
-    0 4px 8px rgba(37, 99, 235, 0.2),
-    0 6px 12px rgba(37, 99, 235, 0.1),
-    inset 0 1px 1px rgba(255, 255, 255, 0.2);
   background: linear-gradient(145deg, var(--secondary-color), var(--primary-color));
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.card-button:active {
-  transform: translateY(0);
   box-shadow: 
-    0 2px 4px rgba(37, 99, 235, 0.1),
-    inset 0 1px 1px rgba(0, 0, 0, 0.1);
+      0 4px 8px rgba(37, 99, 235, 0.2),
+      0 6px 12px rgba(37, 99, 235, 0.1),
+      inset 0 1px 1px rgba(255, 255, 255, 0.2);
 }
 
-.button-icon {
-  transition: transform 0.3s ease;
+.view-source-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  background: var(--primary-color);
+  color: white;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-top: 1rem; /* 與內容保持距離 */
 }
 
-.card-button:hover .button-icon {
-  transform: scale(1.1);
+.view-source-code:hover {
+  background: var(--secondary-color);
+  transform: translateY(-2px);
 }
 
 /* Form styles */
@@ -433,13 +482,18 @@ form .button:active {
   background: #1e293b;
 }
 
+.dark-theme .about-item {
+  background: #1e293b; /* 深色背景 */
+  border: 1px solid #334155; /* 添加邊框，與背景區分 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 深色陰影增強層次感 */
+}
+
 .dark-theme input[type="email"] {
   background: #334155;
   border-color: #475569;
   color: white;
 }
 
-/* Dark theme specific styles */
 .dark-theme #theme-toggle {
   color: var(--text-dark);
 }
@@ -477,6 +531,13 @@ form .button:active {
 .temperature,
 .wind {
   margin-bottom: 0.25rem; /* 元素間距 */
+}
+
+/* Dark Mode 下的天氣樣式 */
+.dark-theme .weather-small {
+  background: rgba(30, 41, 59, 0.9); /* 深色背景 */
+  color: #f8fafc; /* 淺色文字 */
+  border: 1px solid #475569; /* 深色邊框 */
 }
 
 /* Responsive design */
