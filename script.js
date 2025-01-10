@@ -160,7 +160,7 @@ class Carousel {
             });
         });
     }
-
+    
     updateCarousel() {
         if (!this.track) return;
         
