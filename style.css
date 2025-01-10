@@ -63,18 +63,34 @@ body {
 
 #theme-toggle {
   background: none;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
+  border: none;
+  color: var(--text-dark);
+  padding: 0.5rem;
+  border-radius: 50%;
   cursor: pointer;
-  font-weight: 500;
-  transition: var(--transition-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 #theme-toggle:hover {
-  background: var(--primary-color);
-  color: white;
+  background-color: var(--background-light);
+  transform: scale(1.1);
+}
+
+#theme-toggle:active {
+  transform: scale(0.95);
+}
+
+#theme-toggle svg {
+  transition: transform 0.5s ease;
+}
+
+#theme-toggle:hover svg {
+  transform: rotate(15deg);
 }
 
 /* Section and content card styles */
@@ -203,11 +219,24 @@ body {
 
 /* Technical details section */
 .tech-details {
+  /* Update existing styles */
   background: var(--background-light);
   border-radius: 0.75rem;
   padding: 1.5rem;
   margin: 1.5rem 0;
   text-align: left;
+  
+  /* Add transition properties */
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+/* Initial state for visible tech details */
+.tech-details[style*="display: block"] {
+  max-height: 1000px; /* Adjust based on content */
+  opacity: 1;
 }
 
 .tech-details ul {
@@ -250,25 +279,10 @@ body {
 }
 
 /* Contact section styles */
-/*.card-button {
-  display: inline-block;
-  padding: 0.75rem 2rem;
-  margin: 0.5rem;
-  background: var(--primary-color);
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: var(--transition-smooth);
-}
-
-.card-button:hover {
-  background: var(--secondary-color);
-  transform: translateY(-2px);
-}*/
-/* Contact section styles */
 .card-button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 1.25rem;
   margin: 0.5rem;
   font-size: 0.9rem;
@@ -302,6 +316,14 @@ body {
   box-shadow: 
     0 2px 4px rgba(37, 99, 235, 0.1),
     inset 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.button-icon {
+  transition: transform 0.3s ease;
+}
+
+.card-button:hover .button-icon {
+  transform: scale(1.1);
 }
 
 /* Form styles */
@@ -417,12 +439,44 @@ form .button:active {
   color: white;
 }
 
+/* Dark theme specific styles */
+.dark-theme #theme-toggle {
+  color: var(--text-dark);
+}
+
+.dark-theme #theme-toggle:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 /* Weather section styles */
-#weather-data {
-  font-size: 1.25rem;
-  color: var(--primary-color);
-  margin-top: 1.5rem;
-  font-weight: 500;
+.weather-small {
+  position: fixed; /* 固定位置 */
+  bottom: 1rem; /* 底部間距 */
+  left: 1rem; /* 左側間距 */
+  background: rgba(255, 255, 255, 0.9); /* 半透明背景 */
+  border: 1px solid #e2e8f0; /* 邊框 */
+  border-radius: 0.5rem; /* 圓角 */
+  padding: 0.5rem 1rem; /* 內間距 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* 陰影 */
+  font-size: 0.9rem; /* 字體大小 */
+  color: var(--text-dark); /* 字體顏色 */
+  z-index: 1000; /* 優先顯示 */
+  transition: transform 0.3s ease, opacity 0.3s ease; /* 動畫過渡 */
+}
+
+.weather-small:hover {
+  transform: scale(1.05); /* 滑鼠懸停時放大 */
+}
+
+.weather-info {
+  display: flex; /* 排列方式 */
+  flex-direction: column; /* 垂直排列 */
+  align-items: flex-start; /* 靠左對齊 */
+}
+
+.temperature,
+.wind {
+  margin-bottom: 0.25rem; /* 元素間距 */
 }
 
 /* Responsive design */
