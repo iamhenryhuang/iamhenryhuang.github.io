@@ -559,4 +559,12 @@ form .button:active {
   .content-card {
     padding: 1.5rem;
   }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .carousel-slide {
+      text-align: center;
+  }
 }
