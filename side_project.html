@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Side Projects - Henry's Website</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    
+    <body>    
+        <div class="navbar">
+            <div class="navbar-container">
+                <div class="nav-links">
+                    <a href="index.html">About Me</a>
+                    <a href="#portfolio">Side Projects</a>
+                    <a href="index.html#contact">Contact</a>
+                </div>
+                <button id="theme-toggle" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <section id="portfolio" class="section">
+            <div class="content-card">
+                <h1>Side Projects</h1>
+                <div class="carousel-container">
+                    <div class="carousel-track">
+                        <div class="carousel-slide">
+                            <h3>1. Stock Price Prediction - TSMC Regression Analysis</h3>
+                            <div class="img-container">
+                                <img src="./images/regression.png" alt="Regression" class="portfolio-image">
+                            </div>
+                            <h4>Description：</h4>
+                            <p>A deep learning project focused on predicting TSMC stock prices using historical trading data analysis.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>Model Architecture</h4>
+                                <ul>
+                                    <li>Input Features: Opening price, High/Low prices, Volume</li>
+                                    <li>Neural Network Layers:</li>
+                                    <ul>
+                                        <li>Dense Layer (459 units)</li>
+                                        <li>Dense Layer (9 units)</li>
+                                        <li>Output Layer</li>
+                                    </ul>
+                                </ul>
+                                <a href="https://colab.research.google.com/drive/1mjbyh0Q2ILV-cq62wJKVW_B4_3jF9P5y?hl=zh-tw#scrollTo=tAk46J42CSvQ" 
+                                    target="_blank" 
+                                    class="view-source-code">
+                                    <svg style="display:inline-block; vertical-align: middle; margin-right: 8px;" 
+                                        width="24" 
+                                        height="24" 
+                                        viewBox="0 0 24 24" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-width="2">
+                                        <path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path>
+                                        <path d="M12 17v-10"></path>
+                                        <path d="m9 11 3-3 3 3"></path>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                            </div>
+                            <button class="tech-toggle">Show Technical Details</button>
+                            
+                        </div>
+                        <div class="carousel-slide">
+                            <h3>2. Stock Price Prediction - LSTM Time Series Analysis</h3>
+                            <div class="img-container">
+                                <img src="./images/lstm.png" alt="LSTM" class="portfolio-image">
+                            </div>
+                            <h4>Description：</h4>
+                            <p>This project implements an LSTM (Long Short-Term Memory) neural network for stock price prediction.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>LSTM Architecture</h4>
+                                <ul>
+                                    <li>Input Features: 5 historical price indicators</li>
+                                    <li>Model Layers:</li>
+                                    <ul>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>LSTM Layer (50 units) with Dropout</li>
+                                        <li>Dense Output Layer</li>
+                                    </ul>
+                                </ul>
+                                <a href="https://colab.research.google.com/drive/1I_uFWI2wKwi19rGmyrjSwwE1pIjYdWer#scrollTo=vnm3X9da9XD6" 
+                                    target="_blank" 
+                                    class="view-source-code">
+                                    <svg style="display:inline-block; vertical-align: middle; margin-right: 8px;" 
+                                        width="24" 
+                                        height="24" 
+                                        viewBox="0 0 24 24" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-width="2">
+                                        <path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path>
+                                        <path d="M12 17v-10"></path>
+                                        <path d="m9 11 3-3 3 3"></path>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                            </div>
+                            <button class="tech-toggle">Show Technical Details</button>
+                        </div>
+                        <div class="carousel-slide">
+                            <h3>3. Smart Trash Classification System: A Deep Learning Approach</h3>
+                            <div class="img-container">
+                                <img src="./images/trash_frontend.png" class="portfolio-image">
+                                <img src="./images/trash.png" class="portfolio-image">
+                            </div>
+                            <h4>Description：</h4>
+                            <p>Developing an image classification model using TensorFlow and Keras, 
+                                leveraging transfer learning with the pre-trained InceptionV3 model to accurately classify waste.</p>
+                            <div class="tech-details" style="display: none;">
+                                <h4>Technical Details</h4>
+                                <ul>
+                                    <li>Framework: TensorFlow and Keras</li>
+                                    <li>Model: InceptionV3 (pre-trained, fine-tuned last 15 layers)</li>
+                                    <li>Data Processing:</li>
+                                    <ul>
+                                        <li>Dataset split into training and validation sets</li>
+                                        <li>Data augmentation: Shear, Zoom, Horizontal Flip</li>
+                                        <li>Resized input images to 128x128 pixels</li>
+                                    </ul>
+                                    <li>Model Architecture:</li>
+                                    <ul>
+                                        <li>Pre-trained InceptionV3 as feature extractor</li>
+                                        <li>Global Average Pooling layer</li>
+                                        <li>Fully connected Dense layer with 8 output units (softmax activation)</li>
+                                    </ul>
+                                    <li>Optimization:</li>
+                                    <ul>
+                                        <li>Loss Function: Categorical Crossentropy</li>
+                                        <li>Optimizer: RMSprop with a learning rate of 1e-5</li>
+                                    </ul>
+                                    <li>Visualized predictions on test images</li>
+                                    <li>Performance Tracking: Integrated with TensorBoard</li>
+                                </ul>
+                                <a href="https://colab.research.google.com/drive/11TvamhvAiUprdFwdrdyc8FHhsC-01p_n" 
+                                    target="_blank" 
+                                    class="view-source-code">
+                                    <svg style="display:inline-block; vertical-align: middle; margin-right: 8px;" 
+                                        width="24" 
+                                        height="24" 
+                                        viewBox="0 0 24 24" 
+                                        fill="none" 
+                                        stroke="currentColor" 
+                                        stroke-width="2">
+                                        <path d="M8 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-2"></path>
+                                        <path d="M12 17v-10"></path>
+                                        <path d="m9 11 3-3 3 3"></path>
+                                    </svg>
+                                    View Source Code
+                                </a>
+                            </div>                                
+                            <button class="tech-toggle">Show Technical Details</button>
+                        </div>
+                    </div>
+                    
+                    <button class="carousel-button prev">&#10094;</button>
+                    <button class="carousel-button next">&#10095;</button>
+                    <div class="carousel-dots"></div>
+                </div>
+            </div>
+        </section>
+    </body>
+</html> 
