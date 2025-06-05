@@ -44,21 +44,57 @@ body {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  background: rgba(248, 250, 252, 0.8);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .nav-links a {
   color: var(--text-dark);
   text-decoration: none;
-  font-weight: 500;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  transition: var(--transition-smooth);
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  font-size: 0.95rem;
+  letter-spacing: 0.025em;
+  background: transparent;
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.nav-links a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 0.75rem;
 }
 
 .nav-links a:hover {
-  background: var(--primary-color);
   color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3), 0 4px 8px rgba(37, 99, 235, 0.15);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+.nav-links a:hover::before {
+  left: 0;
+}
+
+.nav-links a:active {
+  transform: translateY(0);
+  transition-duration: 0.1s;
 }
 
 #theme-toggle {
@@ -148,6 +184,28 @@ body {
   margin-bottom: 1rem;
 }
 
+/* About section paragraph styles */
+.about-item p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #475569;
+  background: rgba(248, 250, 252, 0.8);
+  padding: 0.875rem 1.25rem;
+  border-radius: 0.75rem;
+  border-left: 3px solid var(--primary-color);
+  margin: 0.5rem 0;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.about-item p:hover {
+  transform: translateX(4px);
+  background: rgba(237, 243, 252, 0.9);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 @media (max-width: 768px) {
   .about-grid {
     grid-template-columns: 1fr;
@@ -197,23 +255,55 @@ body {
   position: relative; /* 添加圖案時需要 */
 }
 
-/* 通用段落樣式 */
+/* Portfolio section paragraph styles */
 .carousel-slide p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: var(--text-dark); /* 預設文字顏色 */
-  background: rgba(255, 255, 255, 0.8); /* 白色半透明背景 */
-  padding: 0.75rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background 0.3s ease, color 0.3s ease;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #374151;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(248, 250, 252, 0.8) 100%);
+  padding: 1rem 1.5rem;
+  border-radius: 0.875rem;
+  border: 1px solid rgba(37, 99, 235, 0.1);
+  margin: 1rem 0;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  box-shadow: 
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
 }
 
-/* Dark Mode 下的段落樣式 */
+.carousel-slide p:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(237, 243, 252, 0.9) 100%);
+  border-color: rgba(37, 99, 235, 0.2);
+  box-shadow: 
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    0 4px 8px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+/* Dark Mode 下的 portfolio 段落樣式 */
 .dark-theme .carousel-slide p {
-  color: #f8fafc; /* 白色文字 */
-  background: rgba(30, 41, 59, 0.9); /* 深色半透明背景 */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* 加強陰影效果 */
+  color: #e2e8f0;
+  background: linear-gradient(135deg, rgba(30, 41, 59, 0.9) 0%, rgba(51, 65, 85, 0.8) 100%);
+  border-color: rgba(59, 130, 246, 0.2);
+  box-shadow: 
+    0 3px 10px rgba(0, 0, 0, 0.3),
+    0 1px 4px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.dark-theme .carousel-slide p:hover {
+  background: linear-gradient(135deg, rgba(51, 65, 85, 0.95) 0%, rgba(71, 85, 105, 0.9) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  color: #f1f5f9;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.4),
+    0 4px 10px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .portfolio-image {
@@ -478,6 +568,26 @@ form .button:active {
   background: rgba(15, 23, 42, 0.95);
 }
 
+.dark-theme .nav-links {
+  background: rgba(30, 41, 59, 0.8);
+  border-color: rgba(148, 163, 184, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.dark-theme .nav-links a {
+  color: #e2e8f0;
+}
+
+.dark-theme .nav-links a::before {
+  background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+}
+
+.dark-theme .nav-links a:hover {
+  color: white;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.4), 0 4px 8px rgba(59, 130, 246, 0.2);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
 .dark-theme .content-card {
   background: #1e293b;
 }
@@ -486,6 +596,20 @@ form .button:active {
   background: #1e293b; /* 深色背景 */
   border: 1px solid #334155; /* 添加邊框，與背景區分 */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* 深色陰影增強層次感 */
+}
+
+/* Dark mode styles for about section paragraphs */
+.dark-theme .about-item p {
+  color: #cbd5e1;
+  background: rgba(30, 41, 59, 0.8);
+  border-left-color: #3b82f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2), 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.dark-theme .about-item p:hover {
+  background: rgba(51, 65, 85, 0.9);
+  color: #e2e8f0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dark-theme input[type="email"] {
@@ -545,11 +669,19 @@ form .button:active {
   .navbar-container {
     flex-direction: column;
     gap: 1rem;
+    padding: 0 1rem;
   }
 
   .nav-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 0.5rem;
+    padding: 0.4rem;
+  }
+
+  .nav-links a {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
   }
 
   .section {
@@ -565,6 +697,6 @@ form .button:active {
   }
   
   .carousel-slide {
-      text-align: center;
+    text-align: center;
   }
 }
