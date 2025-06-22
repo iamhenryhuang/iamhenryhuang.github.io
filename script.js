@@ -1,11 +1,6 @@
 // Constants for DOM selectors and configuration
 const CONFIG = {
     SCROLL_THRESHOLD: 300,
-    WEATHER_API: 'https://api.open-meteo.com/v1/forecast',
-    WEATHER_COORDS: {
-        latitude: 24.9928,
-        longitude: 121.5431
-    },
     CAROUSEL_INTERVAL: 5000 // 5 seconds for auto-slide
 };
 
@@ -204,104 +199,6 @@ class Carousel {
 
 }
 
-// Enhanced weather service with error handling and caching
-class WeatherService {
-    constructor() {
-        this.cache = new Map();
-        this.cacheTimeout = 1800000; // 30 minutes
-    }
-
-    async getWeather() {
-        const weatherDataElement = document.getElementById('weather-data');
-        if (!weatherDataElement) return;
-
-        try {
-            const cachedData = this.cache.get('weather');
-            if (cachedData && Date.now() - cachedData.timestamp < this.cacheTimeout) {
-                this.updateUI(cachedData.data, weatherDataElement);
-                return;
-            }
-
-            const url = new URL(CONFIG.WEATHER_API);
-            url.searchParams.append('latitude', CONFIG.WEATHER_COORDS.latitude);
-            url.searchParams.append('longitude', CONFIG.WEATHER_COORDS.longitude);
-            url.searchParams.append('current_weather', 'true');
-
-            const response = await fetch(url);
-            if (!response.ok) throw new Error('Weather API request failed');
-
-            const data = await response.json();
-            this.cache.set('weather', {
-                data,
-                timestamp: Date.now()
-            });
-
-            this.updateUI(data, weatherDataElement);
-        } catch (error) {
-            console.error('Weather fetch error:', error);
-            weatherDataElement.innerText = '無法獲取天氣數據，請稍後再試。';
-        }
-    }
-
-    updateUI(data, element) {
-        const { temperature, windspeed } = data.current_weather;
-        element.innerHTML = `
-            <div class="weather-info">
-                <span class="temperature">🌡️ 溫度: ${temperature}°C</span>
-                <span class="wind">🌬️ 風速: ${windspeed} km/h</span>
-            </div>
-        `;
-    }
-}
-
-// Form validation and submission handler
-class FormHandler {
-    constructor() {
-        this.form = document.querySelector('form');
-        this.emailInput = document.getElementById('email');
-        this.feedbackElement = document.getElementById('email-feedback');
-        
-        if (this.form && this.emailInput) {
-            this.init();
-        }
-    }
-
-    init() {
-        this.emailInput.addEventListener('input', (e) => this.validateEmail(e.target.value));
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
-    }
-
-    validateEmail(email) {
-        const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        if (this.feedbackElement) {
-            this.feedbackElement.innerText = isValid ? 
-                '有效的電子郵件地址' : 
-                '請輸入有效的電子郵件地址';
-            this.feedbackElement.style.color = isValid ? 'green' : 'red';
-        }
-        return isValid;
-    }
-
-    async handleSubmit(e) {
-        e.preventDefault();
-        const email = this.emailInput.value;
-        
-        if (!this.validateEmail(email)) return;
-
-        try {
-            // Here you would typically send the email to your backend
-            // For now, we'll just simulate a success response
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            
-            alert('感謝您的訂閱！');
-            this.form.reset();
-        } catch (error) {
-            console.error('Form submission error:', error);
-            alert('提交失敗，請稍後再試。');
-        }
-    }
-}
-
 // Initialize all components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize core components
@@ -309,13 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
     carousel.initTechDetails(); // Initialize technical details functionality
     new ThemeManager();
     new FormHandler();
-    
-    // Initialize weather service and fetch initial data
-    const weatherService = new WeatherService();
-    weatherService.getWeather();
-    
-    // Set up periodic weather updates
-    setInterval(() => weatherService.getWeather(), 900000); // Update every 15 minutes
 });
 
 document.addEventListener('DOMContentLoaded', () => {
