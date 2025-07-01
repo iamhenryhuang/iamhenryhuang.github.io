@@ -199,13 +199,78 @@ class Carousel {
 
 }
 
+// 逐字出現動畫類
+class TypewriterAnimation {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        // 只在 index.html 頁面中找到 content-card 裡的 h4 元素
+        // 檢查是否在正確的頁面上
+        if (!window.location.pathname.includes('index.html') && window.location.pathname !== '/') {
+            return; // 如果不是 index.html，就不執行動畫
+        }
+        
+        // 只選擇 index.html 中 #about section 內的 h4 元素
+        const h4Element = document.querySelector('#about .content-card h4');
+        
+        if (h4Element) {
+            this.setupIntersectionObserver(h4Element, 0);
+        }
+    }
+
+    setupIntersectionObserver(element, delay = 0) {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // 延遲執行動畫
+                    setTimeout(() => {
+                        this.animateText(entry.target);
+                    }, delay);
+                    observer.unobserve(entry.target); // 只執行一次
+                }
+            });
+        }, {
+            threshold: 0.3, // 當30%的元素可見時觸發
+            rootMargin: '0px 0px -50px 0px' // 稍微提前觸發
+        });
+
+        observer.observe(element);
+    }
+
+    animateText(element) {
+        const text = element.textContent;
+        element.innerHTML = ''; // 清空原始內容
+        
+        // 將文字拆分成字符
+        const chars = text.split('');
+        
+        chars.forEach((char, index) => {
+            const span = document.createElement('span');
+            span.textContent = char;
+            span.className = 'typewriter-char';
+            
+            // 為空格添加特殊類
+            if (char === ' ') {
+                span.classList.add('space');
+            }
+            
+            // 設置動畫延遲，讓字符逐一出現
+            span.style.animationDelay = `${index * 0.08}s`;
+            
+            element.appendChild(span);
+        });
+    }
+}
+
 // Initialize all components when DOM is ready
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize core components
     const carousel = new Carousel();
     carousel.initTechDetails(); // Initialize technical details functionality
     new ThemeManager();
-    new FormHandler();
+    new TypewriterAnimation(); // 添加逐字動畫
 });
 
 document.addEventListener('DOMContentLoaded', () => {
