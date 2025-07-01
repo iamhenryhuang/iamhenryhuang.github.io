@@ -338,34 +338,70 @@ body {
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
+/* Portfolio圖片容器樣式 */
+.img-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+/* 調整portfolio圖片大小 */
 .portfolio-image {
   width: 100%;
-  max-width: 800px;
+  max-width: 500px; /* 減小最大寬度 */
+  height: auto;
   border-radius: 0.75rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   transition: var(--transition-smooth);
+  object-fit: contain; /* 保持比例 */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 特別針對LSTM圖片的尺寸控制 */
+.img-container img[src*="lstm.png"] {
+  max-width: 400px; /* LSTM圖片更小 */
+  max-height: 300px;
+}
+
+/* 針對垃圾分類圖片 */
+.img-container img[src*="trash"] {
+  max-width: 450px;
+  max-height: 320px;
+}
+
+/* 針對回歸分析圖片 */
+.img-container img[src*="regression.png"] {
+  max-width: 480px;
+  max-height: 350px;
 }
 
 .portfolio-image:hover {
   transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
 }
 
 .carousel-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: var(--primary-color);
+  background: rgba(59, 130, 246, 0.7);
   color: white;
   border: none;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   cursor: pointer;
   transition: var(--transition-smooth);
+  font-size: 0.8rem;
+  opacity: 0.6;
 }
 
 .carousel-button:hover {
   background: var(--secondary-color);
+  opacity: 1;
+  transform: translateY(-50%) scale(1.1);
 }
 
 .prev {
@@ -604,4 +640,72 @@ form .button:active {
   .carousel-slide {
     text-align: center;
   }
+  
+  /* 行動裝置上的圖片大小調整 */
+  .portfolio-image {
+    max-width: 100%;
+  }
+  
+  .img-container img[src*="lstm.png"] {
+    max-width: 90%;
+    max-height: 250px;
+  }
+  
+  .img-container img[src*="trash"] {
+    max-width: 90%;
+    max-height: 280px;
+  }
+  
+  .img-container img[src*="regression.png"] {
+    max-width: 90%;
+    max-height: 300px;
+  }
+}
+
+/* 逐字出現動畫樣式 */
+.typewriter-char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(30px) scale(0.8);
+  animation: charAppear 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes charAppear {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.8);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-5px) scale(1.05);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* 只針對 index.html 中 about section 的 h4 標題樣式 */
+#about .content-card h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+/* 確保動畫字符保持正確的行高 */
+.typewriter-char.space {
+  width: 0.3em;
+  transform: none; /* 空格不需要變形動畫 */
+}
+
+/* 為不同類型的字符添加變化 */
+.typewriter-char:nth-child(even) {
+  animation-duration: 0.9s;
+}
+
+.typewriter-char:nth-child(3n) {
+  animation-duration: 0.7s;
 }
