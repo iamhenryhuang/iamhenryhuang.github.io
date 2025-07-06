@@ -1,103 +1,738 @@
+<!DOCTYPE html>
 <html lang="en">
-    <head>
-        <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Henry's Website</title>
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js" defer></script>
-    </head>
-    <body>    
-        <div class="navbar">
-            <div class="navbar-container">
-                <div class="nav-links">
-                    <a href="index.html">About Me</a>
-                    <a href="project.html">Side Projects</a>
-                    <a href="index.html#contact">Contact</a>
-                </div>
-            </div>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Henry's Personal Portfolio</title>
+
+  <!--
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon">
+
+  <!--
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!--
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!--
+    - #MAIN
+  -->
+
+  <main>
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+      <div class="sidebar-info">
+
+        <figure class="avatar-box">
+          <img src="./assets/images/Made with FlexClip AI-2025-07-06T115210-1.png" alt="Henry Huang" width="80">
+        </figure>
+
+        <div class="info-content">
+          <h1 class="name" title="Henry Huang">henry</h1>
+
+          <p class="title">ML / Web</p>
         </div>
-    <body>    
-        <section id="about" class="section">
-            <div class="content-card">
-                <h4>Hi there, this is Henry.</h4>
-                <img src="./images/me.JPG" alt="me" class="profile-image">
-                
-                <div class="about-grid">
-                    <div class="about-item">
-                        <h3>📚 Education</h3>
-                        <p>Computer Science, National Chengchi University</p>
-                    </div>
-        
-                    <div class="about-item">
-                        <h3>💡 Coding Skills</h3>
-                        <p>C/C++ | Python </p>
-                    </div>
-        
-                    <div class="about-item">
-                        <h3>🎯 Focus Areas</h3>
-                        <p>Machine Learning</P>
-                    </div>
-        
-                    <div class="about-item">
-                        <h3>🏊‍♂️ Extracurricular</h3>
-                        <p>Varsity Swimming Team</p>
-                    </div>
-                </div>
+
+        <button class="info_more-btn" data-sidebar-btn>
+          <span>Show Contacts</span>
+
+          <ion-icon name="chevron-down"></ion-icon>
+        </button>
+
+      </div>
+
+      <div class="sidebar-info_more">
+
+        <div class="separator"></div>
+
+        <ul class="contacts-list">
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="mail-outline"></ion-icon>
             </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Email</p>
+
+              <a href="mailto:henry.curry1008@gmail.com" class="contact-link">henry.curry1008@gmail.com</a>
+            </div>
+
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="school-outline"></ion-icon>
+            </div>
+          
+            <div class="contact-info">
+              <p class="contact-title">School</p>
+          
+              <a href="https://www.cs.nccu.edu.tw/web/index/index.jsp" class="contact-link">National Chengchi University</a>
+            </div>
+          
+          </li>
+
+          <li class="contact-item">
+
+            <div class="icon-box">
+              <ion-icon name="location-outline"></ion-icon>
+            </div>
+
+            <div class="contact-info">
+              <p class="contact-title">Location</p>
+
+              <address>Taipei, Taiwan</address>
+            </div>
+
+          </li>
+
+        </ul>
+
+        <div class="separator"></div>
+
+        <ul class="social-list">
+
+          <li class="social-item">
+            <a href="https://github.com/iamhenryhuang" class="social-link">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://www.linkedin.com/in/iamhenryhuang000/" class="social-link">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </aside>
+
+
+
+    <!--
+      - #main-content
+    -->
+
+    <div class="main-content">
+
+      <!--
+        - #NAVBAR
+      -->
+
+      <nav class="navbar">
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <button class="navbar-link  active" data-nav-link>About</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Resume</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Portfolio</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Contact</button>
+          </li>
+
+        </ul>
+
+      </nav>
+
+
+
+      <!--
+        - #ABOUT
+      -->
+
+      <article class="about  active" data-page="about">
+
+        <header>
+          <h2 class="h2 article-title">About me</h2>
+        </header>
+
+        <section class="about-text">
+          <p>
+          Hi there, this is Henry, and I am currently studying Computer Science at National Chengchi University. 
+          I enjoy challenges and love learning new things. 
+          I’m particularly interested in machine learning, data analysis, and web development. 
+          Outside of academics, I’m also passionate about sports. 
+          I’m a member of the varsity swimming team and enjoy watching basketball games in my free time.
+          </p>
         </section>
 
-        <section id="contact" class="section">
-            <div class="content-card">
-                <h1>Learn more about me</h1>
-                <a href="https://www.facebook.com/profile.php?id=100016927805886" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                    </svg>
-                    Facebook
-                </a>
-                <a href="https://github.com/iamhenryhuang" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                    </svg>
-                    GitHub
-                </a>
-                <a href="https://www.linkedin.com/in/iamhenryhuang000" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                        <rect x="2" y="9" width="4" height="12"></rect>
-                        <circle cx="4" cy="4" r="2"></circle>
-                    </svg>
-                    LinkedIn
-                </a>
-                <a href="https://medium.com/@henry.curry1008" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <circle cx="8" cy="12" r="4"></circle>
-                        <circle cx="16" cy="12" r="3"></circle>
-                    </svg>
-                    Medium                    
-                </a>
-                <a href="https://www.kaggle.com/iamhenryhuang" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <path d="M7.5 4h9a3.5 3.5 0 1 1 0 7h-9a3.5 3.5 0 1 1 0-7z"></path>
-                        <path d="M7.5 13h9a3.5 3.5 0 1 1 0 7h-9a3.5 3.5 0 1 1 0-7z"></path>
-                        <path d="M10 8l4 8"></path>
-                        <path d="M12 8l2 8"></path>
-                    </svg>
-                    Kaggle
-                </a>
-                <a href="https://www.cake.me/me/iamhenryhuang" target="_blank" class="button card-button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="button-icon">
-                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                        <polyline points="14,2 14,8 20,8"></polyline>
-                        <line x1="16" y1="13" x2="8" y2="13"></line>
-                        <line x1="16" y1="17" x2="8" y2="17"></line>
-                        <polyline points="10,9 9,9 8,9"></polyline>
-                    </svg>
-                    CakeResume
-                </a>
-            </div>
+
+        <!--
+          - service
+        -->
+
+        <section class="service">
+
+          <h3 class="h3 service-title">What i'm doing</h3>
+
+          <ul class="service-list">
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-ai2.svg
+                " alt="design icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Machine Learning</h4>
+
+                <p class="service-item-text">
+                  Currently learning about deep learning and computer vision applications
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Web development</h4>
+
+                <p class="service-item-text">
+                  Continuously developing my personal website and building a simple finance-related web
+                </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-da.svg" alt="mobile app icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Data Analysis</h4>
+                  <p class="service-item-text">
+                    <strong>Kaggle Competition:</strong> <a href="https://www.kaggle.com/competitions/spaceship-titanic/leaderboard" target="_blank" class="kaggle-link">ML25-Team05</a><br>
+                    <strong>Rank:</strong> 30/1908 (As of July 6, 2025)<br>
+                  </p>
+              </div>
+
+            </li>
+
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <img src="./assets/images/icon-swim.svg" alt="camera icon" width="40">
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Swimming</h4>
+
+                <p class="service-item-text">
+                  Preparing for 2026 NIAG
+                </p>
+              </div>
+
+            </li>
+
+          </ul>
+
         </section>
-    </body>
+
+
+        <!--
+          - skills showcase
+        -->
+
+        <section class="skills-showcase">
+
+          <h3 class="h3 skills-showcase-title">Technical Skills</h3>
+
+          <ul class="skills-grid">
+
+            <li class="skill-item">
+              <div class="skill-icon-box">
+                <img src="./assets/images/c.svg" alt="C" width="50">
+              </div>
+              <h4 class="h4 skill-name">C</h4>
+            </li>
+
+            <li class="skill-item">
+              <div class="skill-icon-box">
+                <img src="./assets/images/c++.svg" alt="C++" width="50">
+              </div>
+              <h4 class="h4 skill-name">C++</h4>
+            </li>
+
+            <li class="skill-item">
+              <div class="skill-icon-box">
+                <img src="./assets/images/python.svg" alt="Python" width="50">
+              </div>
+              <h4 class="h4 skill-name">Python</h4>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #RESUME
+      -->
+
+      <article class="resume" data-page="resume">
+
+        <header>
+          <h2 class="h2 article-title">
+            <a href="./assets/cv/resume.pdf" class="resume-download-link" download>Resume</a>
+          </h2>
+        </header>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="book-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Education</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">National Chengchi University</h4>
+              <h5>B.S. in Computer Science | FinTech Program</h5>
+
+              <span>2023 — Present</span>
+
+              <p class="timeline-text">
+                Currently have a GPA of 4.03 out of 4.3.
+              </p>
+
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="briefcase-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <ul class="timeline-list experience-list">
+
+            <li class="timeline-item experience-item">
+
+              <h4 class="h4 timeline-item-title">AI Multimedia System Lab</h4>
+              <h5>Research Assistant</h5>
+
+              <span>Jul 2025 ~ Present</span>
+
+              <p class="timeline-text">
+                Provided research assistance to a senior student on his capstone project.
+              </p>
+
+            </li>
+
+            <li class="timeline-item experience-item">
+
+              <h4 class="h4 timeline-item-title">NCCU AI Cross-Domain × Sustainable Innovation Competition</h4>
+
+              <span>May 2025 ~ Present</span>
+
+              <p class="timeline-text">
+                Selected as a finalist.
+                <br>
+                <a href="https://www.youtube.com/watch?v=O2rK_wXFQwk" target="_blank" class="youtube-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                  Watch my latest video
+                </a>
+              </p>
+
+            </li>
+
+            <li class="timeline-item experience-item">
+
+              <h4 class="h4 timeline-item-title">Varsity Swimming Team</h4>
+
+              <span>Sep 2023 ~ Present</span>
+
+              <p class="timeline-text">
+                Served as team captain during my sophomore year(Jul 2024 ~ Jun 2025).<br> 
+                2024 National Intercollegiate Athletic Games - Gold Medalist <br>
+                2025 National Intercollegiate Athletic Games - 5th Place
+              </p>
+
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #PORTFOLIO
+      -->
+
+      <article class="portfolio" data-page="portfolio">
+
+        <header>
+          <h2 class="h2 article-title">Portfolio</h2>
+        </header>
+
+        <section class="projects">
+
+          <ul class="filter-list">
+
+            <li class="filter-item">
+              <button class="active" data-filter-btn>All</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Web design</button>
+            </li>
+
+            <li class="filter-item">
+              <button data-filter-btn>Machine Learning</button>
+            </li>
+
+          </ul>
+
+          <div class="filter-select-box">
+
+            <button class="filter-select" data-select>
+
+              <div class="select-value" data-selecct-value>Select category</div>
+
+              <div class="select-icon">
+                <ion-icon name="chevron-down"></ion-icon>
+              </div>
+
+            </button>
+
+            <ul class="select-list">
+
+              <li class="select-item">
+                <button data-select-item>All</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Web design</button>
+              </li>
+
+              <li class="select-item">
+                <button data-select-item>Machine Learning</button>
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="project-list">
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/1131-multimedia.png" alt="group-web" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Group Website</h3>
+
+                <p class="project-category">Web design</p>
+
+                <div class="project-links">
+                  <a href="https://github.com/iamhenryhuang/1131_multimedia_programming" target="_blank" class="github-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                    View Source Code
+                  </a>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="web design">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/bad_finweb.png" alt="finweb" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Financial Info Website</h3>
+
+                <p class="project-category">Web design</p>
+
+                <div class="project-links">
+                  <a href="https://github.com/iamhenryhuang/financial_web" target="_blank" class="github-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                    View Source Code
+                  </a>
+                </div>
+
+              </a>
+            </li>
+
+            
+            <li class="project-item  active" data-filter-item data-category="machine learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/trash.png" alt="trash-classification" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Trash Classification</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+                <div class="project-links">
+                  <a href="https://github.com/iamhenryhuang/1131_ai_programming/blob/main/final_project/Trash_Classify.ipynb" target="_blank" class="github-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                    View Source Code
+                  </a>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="machine learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/lstm.png" alt="lstm" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">Stock Price Prediction Model</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+                <div class="project-links">
+                  <a href="https://github.com/iamhenryhuang/stock_analysis/blob/main/LSTM_stock.ipynb" target="_blank" class="github-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                    View Source Code
+                  </a>
+                </div>
+
+              </a>
+            </li>
+
+            <li class="project-item  active" data-filter-item data-category="machine learning">
+              <a href="#">
+
+                <figure class="project-img">
+                  <div class="project-item-icon-box">
+                    <ion-icon name="eye-outline"></ion-icon>
+                  </div>
+
+                  <img src="./assets/images/badminton_test.png" alt="yolo_badminton" loading="lazy">
+                </figure>
+
+                <h3 class="project-title">YOLOv9 Object Detection</h3>
+
+                <p class="project-category">Machine Learning</p>
+
+                <div class="project-links">
+                  <a href="https://github.com/iamhenryhuang/yolo" target="_blank" class="github-link">
+                    <ion-icon name="logo-github"></ion-icon>
+                    View Source Code
+                  </a>
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #BLOG
+      -->
+
+      <article class="blog" data-page="blog">
+
+        <header>
+          <h2 class="h2 article-title">Blog</h2>
+        </header>
+
+        <section class="blog-posts">
+
+          <ul class="blog-posts-list">
+
+            <li class="blog-post-item">
+              <a href="https://hackmd.io/@f1mX7jonRqaox82SoIIW7A/ByDF60Drle" target="_blank">
+
+                <div class="blog-content">
+
+                  <div class="blog-meta">
+                    <p class="blog-category">Digital System</p>
+
+                    <span class="dot"></span>
+
+                    <time datetime="2022-02-23">Jul 06, 2025</time>
+                  </div>
+
+                  <h3 class="h3 blog-item-title">探索LLM在數位系統設計課程的應用</h3>
+
+                  <p class="blog-text">
+                    探討 大型語言模型（LLMs）在數位系統設計課程中的應用與效果，
+                    比較了 ChatGPT、Grok、Claude 這三個模型
+                    在 K-Map 化簡與邏輯電路設計任務上的表現，並結合 Perplexity 搜尋結果進行分析。
+                  </p>
+
+                </div>
+
+              </a>
+            </li>
+
+          </ul>
+
+        </section>
+
+      </article>
+
+
+
+      <!--
+        - #CONTACT
+      -->
+
+      <article class="contact" data-page="contact">
+
+        <header>
+          <h2 class="h2 article-title">Contact</h2>
+        </header>
+
+        <section class="mapbox" data-mapbox>
+          <figure>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.5!2d121.5833!3d24.9877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a90a8b5b5b5b%3A0x5b5b5b5b5b5b5b5b!2sNational%20Chengchi%20University!5e0!3m2!1sen!2stw!4v1647608789441!5m2!1sen!2stw"
+              width="400" height="300" loading="lazy"></iframe>
+          </figure>
+        </section>
+
+        <section class="contact-form">
+
+          <h3 class="h3 form-title">Contact Form</h3>
+
+          <form action="#" class="form" data-form>
+
+            <div class="input-wrapper">
+              <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+
+              <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+            </div>
+
+            <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+
+            <button class="form-btn" type="submit" data-form-btn>
+              <ion-icon name="paper-plane"></ion-icon>
+              <span>Send Message</span>
+            </button>
+
+          </form>
+
+        </section>
+
+      </article>
+
+    </div>
+
+  </main>
+
+  <!--
+    - #IMAGE MODAL
+  -->
+  <div class="image-modal-container" data-image-modal>
+    <div class="overlay" data-overlay></div>
+    <div class="image-modal">
+      <button class="modal-close-btn" data-modal-close>
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+      <div class="modal-image-wrapper">
+        <img src="" alt="Project Image" data-modal-image>
+      </div>
+    </div>
+  </div>
+
+  <!--
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!--
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
 </html>
